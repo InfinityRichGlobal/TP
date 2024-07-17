@@ -70,12 +70,11 @@
     }
 
     #content {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh; /* Full viewport height */
+      background-color: white; /* Added background color for clarity */
     }
 
     iframe {
@@ -109,15 +108,15 @@
 </head>
 <body>
 
-
   <div id="content">
-    <iframe src="https://script.google.com/macros/s/AKfycbwtT9A63lEFIkVJDcm9sr1BbvFV4uiIfCbkvymEpG5KhmAheBTg5GVzNeCqHX1rOpGV/exec"></iframe>
+    <iframe id="myIframe" src="https://script.google.com/macros/s/AKfycbwtT9A63lEFIkVJDcm9sr1BbvFV4uiIfCbkvymEpG5KhmAheBTg5GVzNeCqHX1rOpGV/exec"></iframe>
     <button id="homeBtn"><i class="fas fa-home"></i></button>
   </div>
 
-
-    document.getElementById('homeBtn').addEventListener('click', () => {
-      document.querySelector('iframe').src = 'https://script.google.com/macros/s/AKfycbwtT9A63lEFIkVJDcm9sr1BbvFV4uiIfCbkvymEpG5KhmAheBTg5GVzNeCqHX1rOpGV/exec';
+  <script>
+    document.getElementById('homeBtn').addEventListener('click', function() {
+      var iframe = document.getElementById('myIframe');
+      iframe.src = 'https://script.google.com/macros/s/AKfycbwtT9A63lEFIkVJDcm9sr1BbvFV4uiIfCbkvymEpG5KhmAheBTg5GVzNeCqHX1rOpGV/exec';
     });
   </script>
 </body>
